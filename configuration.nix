@@ -124,6 +124,7 @@
       files = [
         ".bashrc"
 	    ".bash_history"
+        ".gitconfig"
         ".config/user-dirs.dirs"
       ];
     };
