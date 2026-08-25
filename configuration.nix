@@ -86,6 +86,7 @@
      deno
      hyprshot
      satty
+     tmux
   ];
 
   programs.hyprland = {
