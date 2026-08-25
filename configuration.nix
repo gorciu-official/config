@@ -120,6 +120,7 @@
         ".gnupg"
         ".config/vesktop/"
 	    "pictures/wallpapers"
+        "projects"
       ];
       files = [
         ".bashrc"
