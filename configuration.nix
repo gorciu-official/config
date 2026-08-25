@@ -116,6 +116,8 @@
 	    ".config/mozilla/firefox"
 	    ".local/share/vesktop"
 	    ".local/share/nvim"
+        ".ssh"
+        ".gnupg"
         ".config/vesktop/"
 	    "pictures/wallpapers"
       ];
