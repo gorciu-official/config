@@ -85,6 +85,8 @@
      gnumake
      xorriso
      nasm
+     cargo
+     rustc
   ];
 
   programs.hyprland = {
