@@ -86,6 +86,7 @@
      gnumake
      xorriso
      nasm
+     gdb
      cargo
      rustc
   ];
