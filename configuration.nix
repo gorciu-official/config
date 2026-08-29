@@ -76,6 +76,7 @@
      git
      tmux
      zoxide
+     gnupg
 
      # coding enviorments (i can't spell this word ok????)
      go
@@ -83,10 +84,13 @@
      deno
      qemu_full
      gcc
+     clang
+     clang-tools
      gnumake
      xorriso
      nasm
      gdb
+     gef
      cargo
      rustc
   ];
