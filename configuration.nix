@@ -11,6 +11,9 @@
   boot.initrd.systemd.enable = true;
   services.logind.settings.Login.HandlePowerKey = "suspend";
 
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
+
   networking.hostName = "Gorciu-Computer";
 
   networking.networkmanager.enable = true;
@@ -36,6 +39,11 @@
     variant = "";
   };
 
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryPackage = pkgs.pinentry-curses;
+  };
+
   console.keyMap = "pl2";
 
   users.users."gorciu" = {
@@ -44,9 +52,11 @@
     # mostly bc nixos is fucked up and does not let me login otherwise
     # ill just set a password on every session ok ? (lol)
     hashedPassword = "";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "vboxusers" ];
     packages = with pkgs; [];
   };
+
+  nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
      # code editors 
@@ -67,6 +77,8 @@
      hyprshot
      hypridle
      hyprlock
+     hyprpolkitagent
+     pinentry-curses
 
      # command line tools 
      fastfetch
@@ -77,6 +89,7 @@
      tmux
      zoxide
      gnupg
+     jq
 
      # coding enviorments (i can't spell this word ok????)
      go
@@ -93,6 +106,9 @@
      gef
      cargo
      rustc
+     openssl
+     mongodb-ce
+     emscripten
   ];
 
   programs.hyprland = {
